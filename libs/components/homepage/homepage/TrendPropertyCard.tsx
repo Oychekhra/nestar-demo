@@ -1,23 +1,24 @@
 import React from "react";
-import { Box, Divider, Stack, Typography } from "@mui/material";
+import { Stack, Box, Divider, Typography } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
-import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 
-const TopPropertyCard = () => {
+const TrendPropertyCard = () => {
   return (
-    <Stack className={"top-card-box"}>
+    <Stack className="trend-card-box">
       <Box
+        component={"div"}
         className={"card-img"}
         style={{
-          backgroundImage: `url("/img/banner/types/apartment.webp")`,
+          backgroundImage: `url(/img/banner/types/house.webp)`,
         }}
       >
         <div>$420000</div>
       </Box>
-      <Box className={"info"}>
-        <strong className={"title"}>Murad Buildings</strong>
-        <p className={"desc"}>Heundae Apartments</p>
+      <Box component={"div"} className={"info"}>
+        <strong className={"title"}>Kingston Buildings</strong>
+        <p className={"desc"}>Super View Apartments</p>
         <div className={"options"}>
           <div>
             <img src="/img/icons/bed.svg" alt="" />
@@ -25,7 +26,7 @@ const TopPropertyCard = () => {
           </div>
           <div>
             <img src="/img/icons/room.svg" alt="" />
-            <span>7 rooms</span>
+            <span>4 rooms</span>
           </div>
           <div>
             <img src="/img/icons/expand.svg" alt="" />
@@ -35,15 +36,15 @@ const TopPropertyCard = () => {
         <Divider sx={{ mt: "15px", mb: "17px" }} />
         <div className={"bott"}>
           <p>Rent</p>
-          <div className={"view-like-box"}>
+          <div className="view-like-box">
             <IconButton color={"default"}>
               <RemoveRedEyeIcon />
             </IconButton>
-            <Typography className={"view-cnt"}>120</Typography>
+            <Typography className="view-cnt">124</Typography>
             <IconButton color={"default"}>
-              <FavoriteIcon style={{ color: "red" }} />
+              <FavoriteIcon />
             </IconButton>
-            <Typography className={"view-cnt"}>200</Typography>
+            <Typography className="view-cnt">300</Typography>
           </div>
         </div>
       </Box>
@@ -51,4 +52,4 @@ const TopPropertyCard = () => {
   );
 };
 
-export default TopPropertyCard;
+export default TrendPropertyCard;

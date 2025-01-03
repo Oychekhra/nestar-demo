@@ -4,7 +4,7 @@ import TopAgents from "@/libs/components/homepage/TopAgents";
 import TopProperties from "@/libs/components/homepage/TopProperties";
 import TrendProperties from "@/libs/components/homepage/TrendProperties";
 import withLayoutMain from "@/libs/components/layout/LayoutHome";
-import {  Stack } from "@mui/material";
+import { Stack } from "@mui/material";
 import { NextPage } from "next";
 
 const Home: NextPage = () =>  {

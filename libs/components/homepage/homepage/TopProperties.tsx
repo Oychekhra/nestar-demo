@@ -1,26 +1,23 @@
-import { Box, Stack } from "@mui/material";
-import { useState } from "react";
+import React, { useState } from "react";
+import { Stack, Box } from "@mui/material";
+
 import WestIcon from "@mui/icons-material/West";
 import EastIcon from "@mui/icons-material/East";
 import { Swiper, SwiperSlide } from "swiper/react";
+
 import TopPropertyCard from "./TopPropertyCard";
 
-const TopProperties = ({ initialInput, ...props }: any) => {
-  const [topProperties, setTopProperties] = useState<number[]>([
-    1, 2, 3, 4, 5, 6, 7,
-  ]);
-
-  // const [topProperties, setTopProperties] = useState<number[]>(initialInput);
-
+const TopProperties = ({initialInput, ...props}:any) => {
+  const [topProperties, setTopProperties] = useState<number[]>(initialInput);
   return (
     <Stack className={"top-properties"}>
       <Stack className={"container"}>
         <Stack className={"info-box"}>
-          <Box className={"left"}>
-            <span>Top Properties</span>
+          <Box component={"div"} className={"left"}>
+            <span>Top properties</span>
             <p>Check out our Top Properties</p>
           </Box>
-          <Box className={"right"}>
+          <Box component={"div"} className={"right"}>
             <div className={"pagination-box"}>
               <WestIcon className={"swiper-top-prev"} />
               <div className={"swiper-top-pagination"}></div>
@@ -56,7 +53,7 @@ const TopProperties = ({ initialInput, ...props }: any) => {
 };
 
 TopProperties.defaultProps = {
-  initialInput: [1, 2, 3, 4, 5, 6, 7],
+  initialInput: [1, 2, 3, 4, 5, 6, 7]
 };
 
 export default TopProperties;

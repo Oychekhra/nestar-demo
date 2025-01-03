@@ -1,26 +1,28 @@
 import React, { useState } from "react";
-import { Box, Stack } from "@mui/material";
-import Link from "next/link";
+import { Stack, Box } from "@mui/material";
+
 import { Swiper, SwiperSlide } from "swiper/react";
+
+import WestIcon from "@mui/icons-material/West";
+import EastIcon from "@mui/icons-material/East";
+// import PopularPropertyCard from "./PopularPropertyCard";
+
+import Link from "next/link";
 import PopularPropertyCard from "./PopularPropertyCard";
 
 const PopularProperties = ({ initialInput, ...props }: any) => {
-  const [popularProperties, setPopularProperties] = useState<number[]>([
-    1, 2, 3, 4, 5, 6, 7,
-  ]);
-
-  //   const [popularProperties, setPopularProperties] =
-  //     useState<number[]>(initialInput);
+  const [popularProperties, setPopularProperties] =
+    useState<number[]>(initialInput);
 
   return (
     <Stack className={"popular-properties"}>
       <Stack className={"container"}>
         <Stack className={"info-box"}>
-          <Box className={"left"}>
-            <span>Popular Properties</span>
-            <p>Popular is based on views</p>
+          <Box component={"div"} className={"left"}>
+            <span>Popular properties</span>
+            <p>Popularity is based on views</p>
           </Box>
-          <Box className={"right"}>
+          <Box component={"div"} className={"right"}>
             <div className={"more-box"}>
               <Link href={"/property"}>
                 <span>See All Categories</span>
@@ -36,7 +38,7 @@ const PopularProperties = ({ initialInput, ...props }: any) => {
             spaceBetween={25}
             navigation={{
               nextEl: ".swiper-popular-next",
-              prevEl: "swiper-popular-prev",
+              prevEl: ".swiper-popular-prev",
             }}
             pagination={{
               el: ".swiper-popular-pagination",
@@ -50,6 +52,11 @@ const PopularProperties = ({ initialInput, ...props }: any) => {
               );
             })}
           </Swiper>
+        </Stack>
+        <Stack className={"pagination-box"}>
+          <WestIcon className={"swiper-popular-prev"} />
+          <div className={"swiper-popular-pagination"}></div>
+          <EastIcon className={"swiper-popular-next"} />
         </Stack>
       </Stack>
     </Stack>

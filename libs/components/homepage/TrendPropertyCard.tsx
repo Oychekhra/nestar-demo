@@ -42,7 +42,7 @@ const TrendPropertyCard = () => {
             </IconButton>
             <Typography className="view-cnt">124</Typography>
             <IconButton color={"default"}>
-              <FavoriteIcon />
+              <FavoriteIcon style={{ color: "red" }}  />
             </IconButton>
             <Typography className="view-cnt">300</Typography>
           </div>
