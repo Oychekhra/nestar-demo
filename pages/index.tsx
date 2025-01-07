@@ -4,21 +4,27 @@ import TopAgents from "@/libs/components/homepage/TopAgents";
 import TopProperties from "@/libs/components/homepage/TopProperties";
 import TrendProperties from "@/libs/components/homepage/TrendProperties";
 import withLayoutMain from "@/libs/components/layout/LayoutHome";
+import useDeviceDetect from "@/libs/hooks/useDeviceDetect";
 import { Stack } from "@mui/material";
 import { NextPage } from "next";
 
 const Home: NextPage = () =>  {
-  return (
-    <Stack className="home-page">
-      <Stack flexDirection={"column"} >
-        <TrendProperties />
-        <PopularProperties />
-        <Advertisement />
-        <TopProperties />
-        <TopAgents/>
-      </Stack>
-    </Stack>    
-  );
+  const device = useDeviceDetect();
+  if(device === "mobile") {
+    return <Stack> HOMEPAGE MOBILE</Stack>
+  } else {
+    return (
+      <Stack className="home-page">
+        <Stack flexDirection={"column"} >
+          <TrendProperties />
+          <PopularProperties />
+          <Advertisement />
+          <TopProperties />
+          <TopAgents/>
+        </Stack>
+      </Stack>    
+    );
+  }
 };
-
+  
 export default withLayoutMain(Home);
